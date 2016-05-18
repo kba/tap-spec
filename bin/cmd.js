@@ -9,11 +9,10 @@ process.stdin
 
 process.on('exit', function (status) {
   
-  if (status === 1) {
-    process.exit(1);
-  }
-  
   if (tapSpec.failed) {
     process.exit(1);
   }
+
+  process.exit(status);
+  
 });
